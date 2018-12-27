@@ -1,0 +1,8 @@
+<ul class="tasks-list">
+    <li *ngFor="let task of tasksList"
+        [class.done]="task.isDone">
+        {{task.taskName}}
+        <input type="checkbox" [attr.checked]="task.isDone? 'checked' : null">
+        <a href="#" class="remove" (click)=removeTask(task)>remove</a>
+    </li>
+</ul>

@@ -1,16 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { InputFormComponent } from './input-form/input-form.component';
+import { TasksListComponent } from './tasks-list/tasks-list.component';
+import { ListManagingServiceService } from './list-managing-service.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InputFormComponent,
+    TasksListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ListManagingServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
