@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { InputFormComponent } from './input-form/input-form.component';
 import { TasksListComponent } from './tasks-list/tasks-list.component';
 import { ListManagingServiceService } from './list-managing-service.service';
+import { FilteringPipe } from './filtering.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputFormComponent,
-    TasksListComponent
+    TasksListComponent,
+    FilteringPipe
   ],
   imports: [
     BrowserModule,

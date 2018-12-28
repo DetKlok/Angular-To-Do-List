@@ -21,11 +21,13 @@ export class ListManagingServiceService {
       this.getTasks();
   }
 
-  removeTask(rmTask) {
-    // let thisTask = rmTask.indexOf(defaultTasksList);
-    console.log(rmTask);
-    // console.log(thisTask);
-    // defaultTasksList.splice(task);
+  removeTask(taskIndex) {
+    defaultTasksList.splice(taskIndex, 1);
+    this.getTasks();
+  }
+
+  toggleTaskState(currentTask) {
+    currentTask.isDone = !currentTask.isDone;
     this.getTasks();
   }
 }

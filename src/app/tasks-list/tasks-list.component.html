@@ -1,8 +1,16 @@
+<div class="counter">
+    <p>{{countDone()}} / {{tasksList.length}} are done</p>
+</div>
+<div class="filters">
+    <a href="#" (click)="filterList('done')">Done</a> <br>
+    <a href="#" (click)="filterList('undone')">Not Done</a> <br>
+    <a href="#" (click)="filterList('all')">Clear</a>
+</div>
 <ul class="tasks-list">
-    <li *ngFor="let task of tasksList"
+    <li *ngFor="let task of tasksList | filtering: doneStatus; let i = index"
         [class.done]="task.isDone">
         {{task.taskName}}
-        <input type="checkbox" [attr.checked]="task.isDone? 'checked' : null">
-        <a href="#" class="remove" (click)=removeTask(task)>remove</a>
+        <input type="checkbox" [checked]="task.isDone" (change)=toggle(task)>
+        <a href="#" class="remove" (click)=removeTask(i)>remove</a>
     </li>
 </ul>

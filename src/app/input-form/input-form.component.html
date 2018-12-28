@@ -1,8 +1,5 @@
 <div class="input-field">
     <h3>Add a task</h3>
     <input type="text" [formControl]="task">
-    <button [attr.disabled]="!task.value? 'disabled' : null" (click)=addNewTask(task.value)>Add Task</button>
-    <p>
-        {{task.value}}
-    </p>
+    <button [disabled]="!task.value " (click)=addNewTask(task.value)>Add Task</button>
 </div>
