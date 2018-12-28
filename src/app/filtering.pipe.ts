@@ -20,10 +20,6 @@ export class FilteringPipe implements PipeTransform {
     } else if (status == 'undone') {
       return unDoneTasks
     }
-
-    console.log(doneTasks);
-    console.log(unDoneTasks);
-    console.log(status);
   }
 
 }
